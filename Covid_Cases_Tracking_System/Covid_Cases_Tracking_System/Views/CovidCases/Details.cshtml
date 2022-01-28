@@ -1,0 +1,42 @@
+﻿@model Covid_Cases_Tracking_System.Models.CovidCases
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CovidCases</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CovidStatus.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CovidStatus.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Person.Lastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Person.Lastname)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CovidCasesID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

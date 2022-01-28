@@ -1,0 +1,52 @@
+﻿<nav class="mt-2">
+    <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item has-treeview">
+            <a href="@Url.Action("index", "people")" class="nav-link">
+                <i class="nav-icon fas fa-user-tie"></i>
+                <p>
+                    Person
+                </p>
+            </a>
+        </li>
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-user-tie"></i>
+                <p>
+                    Covid Cases
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="@Url.Action("ActiveCases", "people")" class="nav-link">
+                        <i class="far fa-id-badge nav-icon"></i>
+                        <p>Active Cases</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("RecoveredCases", "people")" class="nav-link">
+                        <i class="far fa-id-badge nav-icon"></i>
+                        <p>Recovered Cases</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("DeathCases", "people")" class="nav-link">
+                        <i class="far fa-id-badge nav-icon"></i>
+                        <p>Death Cases</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("UnderInvestigation", "people")" class="nav-link">
+                        <i class="far fa-id-badge nav-icon"></i>
+                        <p>Under Investigation</p>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+
+    </ul>
+
+</nav>
+
+

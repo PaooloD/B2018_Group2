@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Covid_Cases_Tracking_System.Models.Person>
+
+@{
+    Layout = "~/Views/Shared/_1Layout.cshtml";
+    ViewBag.Title = "DeathCases";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Death Cases</title>
+</head>
+<body>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>List of Death Cases Information</h2>
+                           
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+
+                            <table id="example4" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Name
+                                        </th>
+
+                                        <th>
+                                            Status
+                                        </th>
+                                        <th>
+                                            Date Acquired
+                                        </th>
+
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Lastname) @Html.DisplayFor(modelItem => item.Suffix), @Html.DisplayFor(modelItem => item.Firstname) @Html.DisplayFor(modelItem => item.Middlename)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CovidCases.FirstOrDefault().CovidStatus.Status)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CovidCases.FirstOrDefault().Date)
+                                            </td>
+                                            <td>
+                                                @Html.ActionLink("Edit", "Edit", new { id = item.PersonID }) |
+                                                @Html.ActionLink("Details", "Details", new { id = item.PersonID }) |
+                                                @Html.ActionLink("Delete", "Delete", new { id = item.PersonID })
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+
+</body>
+</html>
